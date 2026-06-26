@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Recipe<span class="orange">Finder</span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+
+         <button id="randomBtn" class="random-btn">
+
+    <i class="fa-solid fa-dice"></i>
+
+    Surprise Me
+
+</button>
+    <button class="theme-btn" id="themeBtn">
+    <i class="fa-solid fa-moon"></i>
+</button>
+    <button class="favorite-btn" id="favoriteBtn">
+
+    <i class="fa-solid fa-heart"></i>
+
+    My Favorites
+
+    <span id="favoriteCount">0</span>
+
+</button>
+
+</div>
+
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section id = "home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                Discover Delicious Recipes
+            </span>
+
+            <h1>
+                Find Your Next
+                <span>Favorite Recipe</span>
+            </h1>
+
+            <p>
+                Search thousands of delicious recipes from around the world.
+                Simple ingredients. Amazing flavors.
+            </p>
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input
+                   type="text"
+                        id="searchInput"
+                 placeholder="Search recipes...">
+
+                   <button id="searchBtn">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Search
+</button>
+
+            </div>
+
+            <!-- Statistics -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>1000+</h3>
+                    <p>Recipes</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>50+</h3>
+                    <p>Categories</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>20+</h3>
+                    <p>Cuisines</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-star"></i>
+                    <h3>100%</h3>
+                    <p>Delicious</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- Categories -->
+
+<section id="categories" class="categories">
+
+    <h2>Explore by Category</h2>
+
+    <div class="category-list">
+
+       <div class="category-card" data-category="Breakfast">
+              <i class="fa-solid fa-sun"></i>
+             <p>Breakfast</p>
+              </div>
+
+        <div class="category-card" data-category="Chicken">
+    <i class="fa-solid fa-burger"></i>
+    <p>Lunch</p>
+</div>
+
+        <div class="category-card" data-category="Beef">
+    <i class="fa-solid fa-drumstick-bite"></i>
+    <p>Dinner</p>
+</div>
+
+        <div class="category-card" data-category="Vegetarian">
+    <i class="fa-solid fa-leaf"></i>
+    <p>Vegetarian</p>
+</div>
+
+        <div class="category-card" data-category="Dessert">
+    <i class="fa-solid fa-cake-candles"></i>
+    <p>Dessert</p>
+</div>
+<div class="category-card" data-category="Vegan">
+    <i class="fa-solid fa-seedling"></i>
+    <p>Vegan</p>
+</div>
+       <div class="category-card" data-category="Seafood">
+    <i class="fa-solid fa-fish"></i>
+    <p>Seafood</p>
+</div>
+
+       <div class="category-card" data-category="Starter">
+    <i class="fa-regular fa-clock"></i>
+    <p>Quick Meals</p>
+</div>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- Loading Spinner -->
+<!-- ========================= -->
+
+<div id="loader" class="loader">
+
+    <div class="spinner"></div>
+
+    <p>Loading Recipes...</p>
+
+</div>
+
+   <!-- ========================= -->
+<!-- Popular Recipes -->
+<!-- ========================= -->
+
+<section id="recipes" class="recipes">
+
+    <div class="section-title">
+        <h2 id="sectionTitle">Popular Recipes 🔥</h2>
+        <p id="recipeCount"></p>
+    </div>
+
+    <div class="recipe-container" id="recipeContainer">
+
+        <!-- Recipes will be generated dynamically by JavaScript -->
+
+    </div>
+
+</section>
+
+    <!-- ========================= -->
+<!-- Recipe Details Modal -->
+<!-- ========================= -->
+
+<div id="recipeModal" class="recipe-modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn">&times;</span>
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+<!--footer-->
+
+    <footer>
+
+<h2>RecipeFinder</h2>
+
+<p>Discover • Cook • Enjoy</p>
+
+<div class="footer-icons">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+</div>
+
+<p>
+
+© 2026 Recipe Finder
+
+</p>
+
+</footer>
+<!-- Toast Notification -->
+
+<div id="toast" class="toast">
+
+    ❤️ Added to Favorites
+
+</div>
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>
